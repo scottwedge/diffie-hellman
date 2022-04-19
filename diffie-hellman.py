@@ -60,37 +60,29 @@ def a_to_b_mod_c(a, b, c):
 
 
 prime_list = create_prime_list(151, 191)
-print("List of primes is: {}".format(prime_list))
+#print("List of primes is: {}.".format(prime_list))
 
 p = random_prime(prime_list)
-print()  # Blank spacer line
-print("Random prime value from list (for modulo calculation) is {}.".format(p))
+print("Random prime value= {}    from list {} (for modulo calculation).".format(p, prime_list))
 
 g = random_small_number(2,4)
-print()  # Blank spacer line
-print("Random small number (used as base of exponentiation) is: {}.".format(g))
+print("Random small number (used as base of exponentiation) for both users is: {}.".format(g))
 
 n = random_small_number(30, 50)
-print()  # Blank spacer line
-print("Random small number 'n' (used as exponent) is: {}.".format(n))
+print("Random small number 'n' (used as exponent) for user N is: {}.".format(n))
 
 m = random_small_number(30, 50)
-print()  # Blank spacer line
-print("Random small number 'm' (used as exponent) is: {}.".format(m))
+print("Random small number 'm' (used as exponent) for user M is: {}.".format(m))
 
 g_to_n_mod_p = a_to_b_mod_c(g, n, p)
-print()  # Blank spacer line
-print("g to the n mod p (send value to peer) value= {}.".format(g_to_n_mod_p))
+print("User N calculates g to the n mod p (send value to M) value= {}.".format(g_to_n_mod_p))
 
 g_to_m_mod_p = a_to_b_mod_c(g, m, p)
-print()  # Blank spacer line
-print("g to the m mod p (send value to peer) value= {}.".format(g_to_m_mod_p))
+print("User M calculates g to the m mod p (send value to N) value= {}.".format(g_to_m_mod_p))
 
 secret_1 = a_to_b_mod_c(g_to_n_mod_p, m, p)
-print()  # Blank spacer line
-print("Secret value 1 = {}.".format(secret_1))
+print("Secret value for user M = {}.".format(secret_1))
 
 secret_2 = a_to_b_mod_c(g_to_m_mod_p, n, p)
-print()  # Blank spacer line
-print("Secret value 2 = {}.".format(secret_2))
+print("Secret value for user N = {}.".format(secret_2))
 
