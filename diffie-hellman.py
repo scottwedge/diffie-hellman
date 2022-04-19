@@ -75,14 +75,14 @@ m = random_small_number(30, 50)
 print("Random small number 'm' (used as exponent) for user M is: {}.".format(m))
 
 g_to_n_mod_p = a_to_b_mod_c(g, n, p)
-print("User N calculates g to the n mod p (send value to M) value= {}.".format(g_to_n_mod_p))
+print("User N calculates g to the n ({}) mod p ({}) (send value to M) value= {}.".format(g**n, p, g_to_n_mod_p))
 
 g_to_m_mod_p = a_to_b_mod_c(g, m, p)
-print("User M calculates g to the m mod p (send value to N) value= {}.".format(g_to_m_mod_p))
+print("User M calculates g to the m ({}) mod p ({}) (send value to N) value= {}.".format(g**m, p, g_to_m_mod_p))
 
-secret_1 = a_to_b_mod_c(g_to_n_mod_p, m, p)
-print("Secret value for user M = {}.".format(secret_1))
+secret_M = a_to_b_mod_c(g_to_n_mod_p, m, p)
+print("Secret value for user M = {} calculated as {} ** {} mod {} = {} mod {}.".format(secret_M, g_to_n_mod_p, m, p, g_to_n_mod_p ** m, p))
 
-secret_2 = a_to_b_mod_c(g_to_m_mod_p, n, p)
-print("Secret value for user N = {}.".format(secret_2))
+secret_N = a_to_b_mod_c(g_to_m_mod_p, n, p)
+print("Secret value for user N = {} calculated as {} ** {} mod {} = {} mod {}.".format(secret_N, g_to_m_mod_p, n, p, g_to_m_mod_p ** n, p))
 
