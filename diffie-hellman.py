@@ -81,8 +81,8 @@ g_to_m_mod_p = a_to_b_mod_c(g, m, p)
 print("User M calculates g to the m ({}) mod p ({}) (send value to N) value= {}.".format(g**m, p, g_to_m_mod_p))
 
 secret_M = a_to_b_mod_c(g_to_n_mod_p, m, p)
-print("Secret value for user M = {} calculated as {} ** {} mod {} = {} mod {}.".format(secret_M, g_to_n_mod_p, m, p, g_to_n_mod_p ** m, p))
+print("Secret value for user M = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_M, g_to_n_mod_p, m, p, g_to_n_mod_p ** m, p, secret_M))
 
 secret_N = a_to_b_mod_c(g_to_m_mod_p, n, p)
-print("Secret value for user N = {} calculated as {} ** {} mod {} = {} mod {}.".format(secret_N, g_to_m_mod_p, n, p, g_to_m_mod_p ** n, p))
+print("Secret value for user N = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_N, g_to_m_mod_p, n, p, g_to_m_mod_p ** n, p, secret_N))
 
