@@ -58,31 +58,43 @@ def a_to_b_mod_c(a, b, c):
     result = a ** b % c
     return result
 
-
-prime_list = create_prime_list(151, 191)
-#print("List of primes is: {}.".format(prime_list))
-
-p = random_prime(prime_list)
-print("Random prime value= {}    from list {} (for modulo calculation).".format(p, prime_list))
-
-g = random_small_number(2,4)
-print("Random small number (used as base of exponentiation) for both users is: {}.".format(g))
-
-n = random_small_number(30, 50)
-print("Random small number 'n' (used as exponent) for user N is: {}.".format(n))
-
-m = random_small_number(30, 50)
-print("Random small number 'm' (used as exponent) for user M is: {}.".format(m))
-
-g_to_n_mod_p = a_to_b_mod_c(g, n, p)
-print("User N calculates g to the n ({}) mod p ({}) (send value to M) value= {}.".format(g**n, p, g_to_n_mod_p))
-
-g_to_m_mod_p = a_to_b_mod_c(g, m, p)
-print("User M calculates g to the m ({}) mod p ({}) (send value to N) value= {}.".format(g**m, p, g_to_m_mod_p))
-
 secret_M = a_to_b_mod_c(g_to_n_mod_p, m, p)
 print("Secret value for user M = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_M, g_to_n_mod_p, m, p, g_to_n_mod_p ** m, p, secret_M))
 
 secret_N = a_to_b_mod_c(g_to_m_mod_p, n, p)
 print("Secret value for user N = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_N, g_to_m_mod_p, n, p, g_to_m_mod_p ** n, p, secret_N))
 
+=======
+def show_all_calculations():
+    prime_list = create_prime_list(151, 191)
+    #print("List of primes is: {}.".format(prime_list))
+    
+    p = random_prime(prime_list)
+    print("Random prime value= {}    from list {} (for modulo calculation).".format(p, prime_list))
+    
+    g = random_small_number(2,4)
+    print("Random small number (used as base of exponentiation) for both users is: {}.".format(g))
+    
+    n = random_small_number(30, 50)
+    print("Random small number 'n' (used as exponent) for user N is: {}.".format(n))
+    
+    m = random_small_number(30, 50)
+    print("Random small number 'm' (used as exponent) for user M is: {}.".format(m))
+    
+    g_to_n_mod_p = a_to_b_mod_c(g, n, p)
+    print("User N calculates g to the n ({}) mod p ({}) (send value to M) value= {}.".format(g**n, p, g_to_n_mod_p))
+    
+    g_to_m_mod_p = a_to_b_mod_c(g, m, p)
+    print("User M calculates g to the m ({}) mod p ({}) (send value to N) value= {}.".format(g**m, p, g_to_m_mod_p))
+    
+
+    secret_M = a_to_b_mod_c(g_to_n_mod_p, m, p)
+    print("Secret value for user M = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_M, g_to_n_mod_p, m, p, g_to_n_mod_p ** m, p, secret_M))
+
+    secret_N = a_to_b_mod_c(g_to_m_mod_p, n, p)
+    print("Secret value for user N = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_N, g_to_m_mod_p, n, p, g_to_m_mod_p ** n, p, secret_N))
+
+
+
+if __name__ == "__main__":
+    show_all_calculations()
