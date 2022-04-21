@@ -58,13 +58,7 @@ def a_to_b_mod_c(a, b, c):
     result = a ** b % c
     return result
 
-secret_M = a_to_b_mod_c(g_to_n_mod_p, m, p)
-print("Secret value for user M = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_M, g_to_n_mod_p, m, p, g_to_n_mod_p ** m, p, secret_M))
 
-secret_N = a_to_b_mod_c(g_to_m_mod_p, n, p)
-print("Secret value for user N = {}    (calculated as {} ** {} mod {} = {} mod {} = {}).".format(secret_N, g_to_m_mod_p, n, p, g_to_m_mod_p ** n, p, secret_N))
-
-=======
 def show_all_calculations():
     prime_list = create_prime_list(151, 191)
     #print("List of primes is: {}.".format(prime_list))
